@@ -1,0 +1,70 @@
+<div class="all">
+    <div class="overlay">
+        <div class="container text-capitalize">
+            <div class="d-flex justify-content-between py-3 ">
+                <div class="user text-capitalize text-light">
+                    <h5>name  : {{user?.name}}</h5>
+                    <h5 class="text-lowercase">Email : {{user?.email}}</h5>
+                    <h5>Balance : {{user?.balance}} $</h5>
+                    <div class="d-flex justify-content-between">
+                        <button class="btn btn-primary" (click)="showSentTrans()">Sent Transactios</button>
+                        <button class="btn btn-primary" (click)="showRecTrans()">Recieved Transactios</button>
+                    </div>
+                </div>
+                <form [formGroup]="transData" (ngSubmit)="handleSubmit()" class="w-50">
+                    <div>
+                        <input type="text" class="form-control mb-2 " name="email" formControlName="rec" placeholder="Reciver Email">
+                    </div>
+                    <div>
+                        <input type="number" class="form-control mb-2 " name="amount" formControlName="amount" placeholder="Amount">
+                    </div>
+                    <div>
+                        <button class="btn btn-success  " type="submit">Submit Transaction</button>
+                    </div>
+                </form>
+            </div>
+            <div class="myTable">
+                <table class="table table-dark table-striped text-center mt-5" *ngIf="showSentTable">
+                    <thead>
+                        <tr>
+                            <th colspan="3">sent money</th>
+                        </tr>
+                        <tr>
+                            <th>sent to</th>
+                            <th>time</th>
+                            <th>amount</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let trans of sentTransactions">
+                            <td class="text-lowercase">{{trans?.recieverEmail}}</td>
+                            <td>{{trans?.time}}</td>
+                            <td>{{trans?.amount}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            
+                <table class="table table-dark table-striped text-center mt-5" *ngIf="showRecivedTable">
+                    <thead>
+                        <tr>
+                            <th colspan="3">recieved money</th>
+                        </tr>
+                        <tr>
+                            <th>recieved from</th>
+                            <th>time</th>
+                            <th>amount</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let trans of recievedTransactions">
+                            <td class="text-lowercase">{{trans?.senderEmail}}</td>
+                            <td>{{trans?.time}}</td>
+                            <td>{{trans?.amount}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+    </div>
+</div>

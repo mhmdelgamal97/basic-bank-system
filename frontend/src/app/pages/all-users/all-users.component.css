@@ -1,0 +1,10 @@
+.page{
+    background-image: url("src/assets/new-one-hundred-dollar-bill-us-bank-notes-pile-design-currency-federal-reserve-39704625.jpg");
+    background-size: cover;
+
+    
+}
+.overlay{
+    height: 91.5vh;
+    background-color: #00000075;
+}

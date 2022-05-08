@@ -1,0 +1,29 @@
+<div class="all">
+    <div class="overlay">
+        <div class="text-center text-light">
+            <h2>Transactions List</h2>
+        </div>
+        <div class="container mt-3">
+            <table class="table table-dark table-striped text-center">
+                <thead>
+                    <tr class="text-capitalize">
+                        <td>ID</td>
+                        <td>from</td>
+                        <td>to</td>
+                        <td>time</td>
+                        <td>amount</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let tran of transactions">
+                        <td>{{tran._id}}</td>
+                        <td>{{tran.senderEmail}}</td>
+                        <td>{{tran.recieverEmail}}</td>
+                        <td>{{tran.time}}</td>
+                        <td>{{tran.amount}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

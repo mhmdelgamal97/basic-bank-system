@@ -1,0 +1,15 @@
+.content{
+    
+    background-image: url("src/assets/pexels-photo-730547.jpeg");
+    background-size: cover;
+}
+.overlay{
+    height: 91.5vh;
+    background-color: #00000075;
+}
+button{
+    width: 45%;
+}
+.cont{
+    background-color:#000000b3;
+}
